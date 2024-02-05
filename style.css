@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  /* PRIMARY */
+  --orange: hsl(25, 97%, 53%);
+
+  /* NEUTRAL */
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--very-dark-blue);
+  color: var(--black);
+  font-size: 1.5rem;
+  font-family: "Overpass", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: 32rem;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  background: var(--dark-blue);
+  color: white;
+  scale: 0;
+  animation: scaleIn 0.25s ease-in-out 1s forwards;
+}
+
+.icon {
+  margin-bottom: 2rem;
+  background-color: hsl(213, 19%, 24%);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.icon img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.intro {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--light-grey);
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.rating {
+  background-color: hsl(216, 12%, 24%);
+  color: var(--light-grey);
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.25s ease-in;
+}
+
+.rating.selected {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.btn-submit {
+  background-color: var(--orange);
+  color: inherit;
+  font-size: 1.25rem;
+  border: 1px solid transparent;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  transition: transform 0.4s ease;
+}
+
+.btn-submit:hover {
+  background: var(--white);
+  color: var(--orange);
+  transform: translateY(0.1rem) scale(1.01);
+}
+
+/* THANK YOU STATE */
+.thank-you-state {
+  background: var(--dark-blue);
+  max-width: 32rem;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  color: var(--white);
+  display: none;
+}
+
+.thank-you-state img {
+  margin-bottom: 1rem;
+}
+
+.rating-preview {
+  margin-top: 1.5rem;
+  background-color: hsl(213, 19%, 24%);
+  width: max-content;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.25rem;
+  color: var(--orange);
+  margin-bottom: 2rem;
+}
+
+.thank-you-state h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--light-grey);
+}
+
+/* CARD SCALE-IN ANIMATION */
+@keyframes scaleIn {
+  from {
+    scale: 0;
+    /* opacity: 0; */
+  }
+
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
